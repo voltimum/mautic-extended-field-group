@@ -1,0 +1,14 @@
+{
+    "name": "voltimum/mautic-extended-field-group-bundle",
+    "description": "Extend Custom Fields Group for Mautic framework",
+    "keywords": ["mautic","marketing","marketing automation","plugin"],
+    "type": "mautic-plugin",
+    "version": "1.0.0",
+    "license": "GPL-3.0-only",
+    "repositories": [
+        {
+            "url": "https://github.com/voltimum/mautic-extended-field-group",
+            "type": "vcs"
+        }
+    ]
+}
