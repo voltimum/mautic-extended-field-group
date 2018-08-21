@@ -2,7 +2,7 @@
 
 /*
  * @copyright   2018 Voltimum SA. All rights reserved
- * @author      voltimum-vk
+ * @author      voltimum
  *
  * @link        http://voltimum.com
  *
