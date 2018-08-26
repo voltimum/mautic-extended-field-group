@@ -48,5 +48,18 @@ return [
         ],
       ],
     ]
-  ]
+  ],
+  'routes' => [
+        'api' => [
+            'mautic_api_extendedfieldgroup_list' => [
+                'path'            => '/custom-fields-groups',
+                'controller'      => 'MauticExtendedFieldGroupBundle:Api\Api:list',
+            ],
+            'mautic_api_extendedfieldgroup_update' => [
+                'path'            => '/custom-fields-groups/update',
+                'controller'      => 'MauticExtendedFieldGroupBundle:Api\Api:update',
+                'method'     => 'POST',
+            ],
+        ],
+    ]
 ];

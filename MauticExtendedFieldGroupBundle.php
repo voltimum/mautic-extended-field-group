@@ -27,5 +27,7 @@ class MauticExtendedFieldGroupBundle extends PluginBundleBase {
       }
     }
   }
+  
+  
 
 }
