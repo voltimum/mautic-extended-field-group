@@ -42,7 +42,7 @@ class ApiController extends CommonApiController {
     $configurator = $this->get('mautic.configurator');
     $paramethers = $configurator->getParameters();
     $isWritabale = $configurator->isFileWritable();
-    $view = $this->view(['success' => []], Codes::HTTP_OK);
+    $view = $this->view(['success' => true, 'list' => []], Codes::HTTP_OK);
     MauticExtendedFieldGroupHelper::initFactory($this->factory);
     $validation = MauticExtendedFieldGroupHelper::preSaveValidate($list['list']);
     if (!$validation['success']) {
@@ -54,9 +54,9 @@ class ApiController extends CommonApiController {
           $configurator->write();
           $cacheHelper = $this->get('mautic.helper.cache');
           $cacheHelper->clearContainerFile();
-          $view = $this->view(['success' => $list], Codes::HTTP_OK);
+          $view = $this->view(['success' => true, 'list' => $list], Codes::HTTP_OK);
         } catch (\RuntimeException $exception) {
-          $view = $this->view(['error' => $exception->getMessage()], Codes::HTTP_OK);
+          $view = $this->view(['success' => false, 'message' => $exception->getMessage(), 'messageParams' => []], Codes::HTTP_OK);
         }
       }
     }
