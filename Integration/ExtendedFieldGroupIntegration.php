@@ -22,7 +22,7 @@ class ExtendedFieldGroupIntegration extends AbstractIntegration
     
     public function getIcon()
     {
-        return 'plugins/MauticExtendedFieldGroupBundle/Assets/img/icon-voltimum.png';
+        return 'plugins/MauticExtendedFieldGroupBundle/Assets/img/vlt-icon-extended-field-groups.png';
     }
     
     /**
