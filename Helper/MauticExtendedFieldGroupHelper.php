@@ -59,7 +59,7 @@ class MauticExtendedFieldGroupHelper {
     $translator = self::$factory->getTranslator();
 
     $assignedGroups = self::getAssignedCustomGroups();
-
+    
     // Manipulate the values
 
     $machineNames = array();
@@ -97,6 +97,22 @@ class MauticExtendedFieldGroupHelper {
 
     return ['success' => true];
   }
+  
+  public static $ExtendedFieldsBundleGroups = [
+      'core'         => 'mautic.lead.field.group.core', // Personally Identifiable
+      'auto'         => 'mautic.lead.field.group.auto',
+      'client'       => 'mautic.lead.field.group.client',
+      'consent'      => 'mautic.lead.field.group.consent',
+      'education'    => 'mautic.lead.field.group.education',
+      'enhancement'  => 'mautic.lead.field.group.enhancement',
+      'finance'      => 'mautic.lead.field.group.finance',
+      'personal'     => 'mautic.lead.field.group.personal', // Health
+      'home'         => 'mautic.lead.field.group.home',
+      'politics'     => 'mautic.lead.field.group.politics',
+      'professional' => 'mautic.lead.field.group.professional',
+      'social'       => 'mautic.lead.field.group.social',
+      'system'       => 'mautic.lead.field.group.system',
+  ];
 
   /**
 
@@ -104,7 +120,9 @@ class MauticExtendedFieldGroupHelper {
    */
   public static function getAssignedCustomGroups() {
 
-    $standardGroups = self::$factory->getModel('lead')->getRepository()->getFieldGroups();
+    //$standardGroups = self::$factory->getModel('lead')->getRepository()->getFieldGroups();
+    $standardGroups = array_keys(self::$ExtendedFieldsBundleGroups);
+    
     /** @var \Mautic\LeadBundle\Model\FieldModel $fieldModel */
     $fieldModel = self::$factory->getModel('lead.field');
     $tableName = $fieldModel->getRepository()->getTableName();
@@ -119,7 +137,7 @@ class MauticExtendedFieldGroupHelper {
       foreach ($g as $key => $field_group) {
         $customGroups[$field_group] = $field_group;
       }
-    }
+    }  
     return $customGroups;
   }
 
