@@ -81,7 +81,7 @@ class MauticExtendedFieldGroupHelper {
         ];
       }
     }
-
+    $standardGroups = array_keys(self::$ExtendedFieldsBundleGroups);
     /* 2. do not use standard group names */
     foreach ($machineNames as $i => $_groupName) {
       if (in_array($_groupName, $standardGroups)) {
